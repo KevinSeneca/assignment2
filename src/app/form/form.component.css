@@ -1,0 +1,18 @@
+.triangle {
+    width: 0px;
+    height: 0px;
+    border-top: 150px solid;
+    border-bottom: 150px solid;
+    border-right: 300px solid;
+    border-left: 300px solid;
+    border-top-color: transparent;
+    border-bottom-color: brown;
+    border-right-color: transparent;
+    border-left-color: brown;
+    }
+
+    .fieldError {
+        font-size: 12px;
+        color: red;
+        margin: 0;
+      }
