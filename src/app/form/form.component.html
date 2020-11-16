@@ -1,29 +1,28 @@
+
 <form>
     <div class="container h-100">
         <div class="row h-100 justify-content-center align-items-center">
             <div class="form-group">
-                <label for="smSide">Short Side</label>
-                <input type="email" class="form-control" id="smSide" name="smSide" [(ngModel)]="smSide">
-                <p class="fieldError" *ngIf="smSideError">{{ smSideError }}</p>
+                <label for="smallSide">Short Side</label>
+                <input type="text" class="form-control" id="smallSide" name="smallSide" [(ngModel)]="smallSide">
+                <p class="fieldError" *ngIf="smallSideError">{{ smallSideError }}</p>
             </div>
             <div class="triangle"></div>
         </div>
     </div>
-    <div class="container h-100">
         <div class="row h-100 justify-content-center align-items-center">
             <div class="form-group">
-                <label for="lgSide">Long Side</label>
-                <input type="text" class="form-control" id="lgSide" name="lgSide" [(ngModel)]="lgSide">
-                <p class="fieldError" *ngIf="lgSideError">{{ lgSideError }}</p>
+                <label for="largeSide">Long Side</label>
+                <input type="text" class="form-control" id="largeSide" name="largeSide" [(ngModel)]="largeSide">
+                <p class="fieldError" *ngIf="largeSideError">{{ largeSideError }}</p>
             </div>
         </div>
-    </div>
-    <div class="container h-50">
         <div class="form-group pt-3">
             <div class="row h-20 justify-content-center align-items-center">
-                <button class="btn btn-primary btn-block btn-md" (click)="submitForm()">Sign Up</button>
+                <button class="btn btn-primary btn-block btn-md" (click)="submitForm()">Submit</button>
             </div>
         </div>
-    </div>
 </form>
-  
+<div class="row h-100 justify-content-center align-items-center">
+    <h3>Result: <b>{{ myResult }}</b></h3>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { calculateSide } from '../services/resultscalculator';
 
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -11,48 +12,68 @@ export class FormComponent implements OnInit {
 
   constructor() { }
 
-    // Create properties for that can bind to you form fields
-    lgSide: string = '';
-    smSide: string = '';
-  
-    // Create properties that will help form interact with the user
-    formError: string;
-  
-    smSideError: string;
-    lgSideError: string;
-  
-    submitForm() {
-      // Put validation logic here
-      const requiredErrorMessage = 'This field is required';
-  
-      // Clear all previous errors
-      this.smSide = '';
-      this.lgSide = '';
-  
-      let errorCount = 0;
-  
-      // Ensure all fields are not blank
-      if (this.smSide === '') {
-        this.smSideError = requiredErrorMessage;
-        errorCount++;
-      }
-  
-      // Email validation
-      if (this.lgSide === '') {
-        this.lgSideError = requiredErrorMessage;
-        errorCount++;
-      }
-  
-      console.log(`There are ${errorCount} error(s) in the form!`);
-  
-      if (errorCount === 0) {
-        console.log('Submit the form!');
-        console.log(this);
-        // Write code that will send the form data to where you need it to go.
-      }
-  
+  // Properties that bind to form fields
+  largeSide: string = '';
+  smallSide: string = '';
+
+  myResult: number = 0;
+ //  resultAnswer: number;
+
+  // Create properties that will help form interact with the user
+  formError: string;
+
+  smallSideError: string;
+  largeSideError: string;
+
+  submitForm() {
+    const requiredErrorMessage = 'This field is required.';
+    const numberRequiredErrorMessage = 'A number is required.';
+
+    // Clear all previous errors
+    this.smallSideError = '';
+    this.largeSideError = '';
+
+    let errorCount = 0;
+
+    // Ensure all fields are not blank
+    if (this.smallSide === '') {
+      this.smallSideError = requiredErrorMessage;
+      errorCount++;
     }
- 
+        
+    // Email validation
+    if (this.largeSide === '') {
+      this.largeSideError = requiredErrorMessage;
+      errorCount++;
+    }
+
+    if (this.largeSide < this.smallSide) {
+      this.largeSideError = "Large side must be larger than small side.";
+      errorCount++;
+    }
+
+    if (isNaN(Number(this.largeSide))) {
+      this.largeSideError = numberRequiredErrorMessage;
+      errorCount++;
+    }
+
+    if (isNaN(Number(this.smallSide))) {
+      this.smallSideError = numberRequiredErrorMessage;
+      errorCount++;
+    }
+
+    console.log(`There are ${errorCount} error(s) in the form!`);
+
+    console.log(this.smallSide);
+    console.log(this.largeSide);
+
+    if (errorCount === 0) {
+      console.log(calculateSide(Number(this.smallSide), Number(this.largeSide)));  /* something wrong here, function is not available to this component */
+      this.myResult = calculateSide(Number(this.smallSide), Number(this.largeSide));
+    }
+  }
+
   ngOnInit(): void {
   }
+  
 }

@@ -1,10 +1,4 @@
 
-export function calculateSide({ x, y }) { 
-        if (x >= y) {
-            return false;
-        } 
-        else
-        {
-        return Math.sqrt(x * x + y * y);
-        }
+export function calculateSide(y: number, x: number ) { 
+    return Math.sqrt(x * x + y * y);
 } 

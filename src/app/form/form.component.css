@@ -16,3 +16,11 @@
         color: red;
         margin: 0;
       }
+
+    .inputNum {
+      width: 100px;
+    }
+
+    .btn {
+      width: 100px;
+    }
