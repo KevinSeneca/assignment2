@@ -17,6 +17,7 @@ export class FormComponent implements OnInit {
   smallSide: string = '';
 
   myResult: number = 0;
+  myResultString: string = '';
  //  resultAnswer: number;
 
   // Create properties that will help form interact with the user
@@ -24,6 +25,17 @@ export class FormComponent implements OnInit {
 
   smallSideError: string;
   largeSideError: string;
+
+  reset() {
+    // Clear all previous errors
+    this.smallSideError = '';
+    this.largeSideError = '';
+    // Clear all previous values
+    this.smallSide = '';
+    this.largeSide = '';
+    this.myResultString = '';
+    this.myResult = 0;
+  }
 
   submitForm() {
     const requiredErrorMessage = 'This field is required.';
@@ -70,6 +82,7 @@ export class FormComponent implements OnInit {
     if (errorCount === 0) {
       console.log(calculateSide(Number(this.smallSide), Number(this.largeSide)));  /* something wrong here, function is not available to this component */
       this.myResult = calculateSide(Number(this.smallSide), Number(this.largeSide));
+      this.myResultString = calculateSide(Number(this.smallSide), Number(this.largeSide)).toString();
     }
   }
 

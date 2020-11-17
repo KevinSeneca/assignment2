@@ -10,9 +10,9 @@ export class ResultsComponent implements OnInit {
 
   constructor() { }
 
-  @Input() resultAnswer: number = 666;
+  @Input() resultAnswer: string = '';
   
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
 
 }

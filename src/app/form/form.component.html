@@ -1,6 +1,7 @@
 
 <form>
     <div class="container h-100">
+        <app-results [resultAnswer]=myResultString></app-results>
         <div class="row h-100 justify-content-center align-items-center">
             <div class="form-group">
                 <label for="smallSide">Short Side</label>
@@ -10,19 +11,22 @@
             <div class="triangle"></div>
         </div>
     </div>
-        <div class="row h-100 justify-content-center align-items-center">
-            <div class="form-group">
-                <label for="largeSide">Long Side</label>
-                <input type="text" class="form-control" id="largeSide" name="largeSide" [(ngModel)]="largeSide">
-                <p class="fieldError" *ngIf="largeSideError">{{ largeSideError }}</p>
-            </div>
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="form-group">
+            <label for="largeSide">Long Side</label>
+            <input type="text" class="form-control" id="largeSide" name="largeSide" [(ngModel)]="largeSide">
+            <p class="fieldError" *ngIf="largeSideError">{{ largeSideError }}</p>
         </div>
-        <div class="form-group pt-3">
-            <div class="row h-20 justify-content-center align-items-center">
-                <button class="btn btn-primary btn-block btn-md" (click)="submitForm()">Submit</button>
-            </div>
+    </div>
+    <div class="form-group pt-3">
+        <div class="row h-20 justify-content-center align-items-center">
+            <button class="btn btn-primary btn-block btn-md" (click)="submitForm()">Calcualte!</button>
         </div>
+    </div>
+    <div class="form-group pt-3">
+        <div class="row h-20 justify-content-center align-items-center">
+            <button class="btn btn-secondary btn-block btn-md" (click)="reset()">Reset</button>
+        </div>
+    </div>
 </form>
-<div class="row h-100 justify-content-center align-items-center">
-    <h3>Result: <b>{{ myResult }}</b></h3>
-</div>
+
