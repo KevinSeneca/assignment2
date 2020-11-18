@@ -6,13 +6,14 @@
     border-right: 300px solid;
     border-left: 300px solid;
     border-top-color: transparent;
-    border-bottom-color: brown;
+    border-bottom-color: orangered;
     border-right-color: transparent;
-    border-left-color: brown;
+    border-left-color: orangered;
     }
 
     .fieldError {
-        font-size: 12px;
+        font-size: 16px;
+        font-weight: 600;
         color: red;
         margin: 0;
       }

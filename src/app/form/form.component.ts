@@ -59,7 +59,7 @@ export class FormComponent implements OnInit {
       errorCount++;
     }
 
-    if (this.largeSide < this.smallSide) {
+    if (Number(this.largeSide) < Number(this.smallSide)) {
       this.largeSideError = "Large side must be larger than small side.";
       errorCount++;
     }
